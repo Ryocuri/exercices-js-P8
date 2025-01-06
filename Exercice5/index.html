@@ -1,23 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr"> <!-- Ajout de l'attribut lang pour définir la langue -->
 <head>
-    <title>Page sans Accessibilité</title>
+    <meta charset="UTF-8"> <!-- Ajout de l'encodage -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajout du viewport pour la responsivité -->
+    <title>Page Accessible</title>
 </head>
 <body>
-<h1>Titre de la Page</h1>
-<p>Ceci est un paragraphe de texte.</p>
+<header>
+    <h1>Titre de la Page</h1>
+</header>
 
-<!-- Formulaire sans étiquette pour les champs -->
-<form>
-    <input id="name" type="text" placeholder="Entrez votre nom">
-    <input id="email" type="email" placeholder="Entrez votre adresse e-mail">
-    <button type="submit">Envoyer</button>
-</form>
+<main>
+    <p>Ceci est un paragraphe de texte.</p>
 
-<!-- Image sans attribut alt -->
-<img src="assets/image.png" height=250>
+    <form aria-label="Formulaire de contact">
+        <div class="form-group">
+            <label for="name">Nom :</label>
+            <input id="name" type="text" name="name" aria-required="true" aria-label="Votre nom">
+        </div>
 
-<!-- Lien sans texte descriptif -->
-<a href="#">Cliquez ici</a>
+        <div class="form-group">
+            <label for="email">Adresse e-mail :</label>
+            <input id="email" type="email" name="email" aria-required="true" aria-label="Votre adresse e-mail">
+        </div>
+
+        <button type="submit" aria-label="Envoyer le formulaire">
+            Envoyer
+        </button>
+    </form>
+
+    <img src="assets/image.png" alt="Description détaillée de l'image" height="250" width="auto">
+
+    <a href="#" aria-label="Accéder à la section suivante">
+        Accéder à la section suivante
+    </a>
+</main>
 </body>
 </html>
