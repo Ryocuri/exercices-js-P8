@@ -1,13 +1,12 @@
 function pairNumbers(firstNumber, secondNumber) {
-    if (typeof firstNumber !== 'number' || typeof secondNumber !== 'number') {
-        return "Les paramètres doivent être des nombres";
-    }
+    firstNumber = Number(firstNumber);
+    secondNumber = Number(secondNumber);
 
     firstNumber = Math.floor(firstNumber);
     secondNumber = Math.floor(secondNumber);
 
     if (firstNumber > secondNumber) {
-        [firstNumber, secondNumber] = [secondNumber, firstNumber];
+        return '';
     }
 
     let result = [];
