@@ -1,8 +1,7 @@
 function convertToBinary() {
-    const decimalInput = document.getElementById('decimalInput');
     const resultDisplay = document.getElementById('binaryResult');
 
-    let decimalValue = decimalInput.value.trim();
+    let decimalValue = document.getElementById('decimalInput').value.trim();
 
     if (!decimalValue || !isNumeric(decimalValue)) {
         resultDisplay.textContent = '';
@@ -30,14 +29,11 @@ function convertToBinary() {
     let quotient = number;
 
     while (quotient > 0) {
-        const remainder = quotient % 2;
-        binaryDigits.unshift(remainder);
+        binaryDigits.unshift(quotient % 2);
         quotient = Math.floor(quotient / 2);
     }
 
-    const binaryResult = binaryDigits.join('');
-
-    resultDisplay.textContent = `${number} en binaire : ${binaryResult}`;
+    resultDisplay.textContent = `${number} en binaire : ${binaryDigits.join('')}`;
 }
 
 function isNumeric(str) {
