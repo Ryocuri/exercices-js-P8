@@ -4,8 +4,8 @@ function convertToBinary() {
 
     let decimalValue = decimalInput.value.trim();
 
-    if (!decimalValue) {
-        resultDisplay.textContent = "Veuillez entrer un nombre";
+    if (!decimalValue || !isNumeric(decimalValue)) {
+        resultDisplay.textContent = '';
         return;
     }
 
@@ -38,4 +38,8 @@ function convertToBinary() {
     const binaryResult = binaryDigits.join('');
 
     resultDisplay.textContent = `${number} en binaire : ${binaryResult}`;
+}
+
+function isNumeric(str) {
+    return /^\d+$/.test(str);
 }

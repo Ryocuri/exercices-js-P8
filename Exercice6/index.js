@@ -33,15 +33,13 @@ function calculateResult() {
         const result = eval(displayValue);
 
         if (!isFinite(result)) {
-            throw new Error('Division par zéro');
+            throw new Error('Division by zero is not allowed');
         }
 
         displayValue = parseFloat(result.toFixed(2)).toString();
         updateDisplay();
     } catch (error) {
-        displayValue = 'Erreur';
+        displayValue = error.message;
         updateDisplay();
-
-        setTimeout(clearDisplay, 1000);
     }
 }

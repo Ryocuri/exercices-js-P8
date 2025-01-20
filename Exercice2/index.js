@@ -11,6 +11,9 @@ const operators = {
 };
 
 function calculate(firstNumber, secondNumber, operator) {
+    firstNumber = Number(firstNumber);
+    secondNumber = Number(secondNumber);
+
     if (typeof firstNumber !== 'number' || typeof secondNumber !== 'number') {
         return "Invalid number input";
     }
